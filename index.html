@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sites para lojas que vendem pelo WhatsApp</title>
+<meta name="description" content="Vitrine, carrinho e pedido pronto no seu WhatsApp. Teste a loja de exemplo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sites para lojas que vendem pelo WhatsApp">
+<meta property="og:description" content="Vitrine, carrinho e pedido pronto no seu WhatsApp. Teste a loja de exemplo.">
+<meta property="og:image" content="https://SEU-DOMINIO/preview.png"><!-- troque pelo seu domínio; imagem ~1200x630 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8ff;--surface:#fff;--ink:#1f1830;--muted:#675d7a;--accent:#6d28d9;--accent2:#a855f7;--on:#fff;--line:#e8e1f5;--soft:#f1eafd;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#110d1b;--surface:#1a1427;--ink:#efe9fa;--muted:#aaa0bd;--accent:#a78bfa;--accent2:#c084fc;--on:#180f2e;--line:#2c2440;--soft:#221a35;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#110d1b;--surface:#1a1427;--ink:#efe9fa;--muted:#aaa0bd;--accent:#a78bfa;--accent2:#c084fc;--on:#180f2e;--line:#2c2440;--soft:#221a35;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;font-size:16px;min-height:100%}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(34px,8vw,56px);font-weight:800}
+h2{font-size:clamp(26px,5vw,36px);font-weight:800}
+h3{font-size:17px;font-weight:700;letter-spacing:0}
+p{margin:0 0 1em}
+.muted{color:var(--muted)}
+.hl{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;letter-spacing:-.02em}
+.logo i{color:var(--accent);font-style:normal}
+.btn{display:inline-block;background:var(--accent);color:var(--on);text-decoration:none;border:0;padding:13px 22px;border-radius:999px;font:inherit;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .2s}
+.btn:hover{box-shadow:0 8px 22px rgba(109,40,217,.35);transform:translateY(-1px)}
+.btn:active{transform:scale(.95)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.sm{padding:9px 16px;font-size:14px}
+.hero{position:relative;padding-top:64px;overflow:hidden}
+.hero::before{content:"";position:absolute;width:420px;height:420px;right:-140px;top:-120px;background:radial-gradient(circle,var(--accent2),transparent 65%);opacity:.28;filter:blur(20px);animation:float 9s ease-in-out infinite;z-index:-1}
+@keyframes float{50%{transform:translate(-30px,30px)}}
+.hero p.lead{font-size:19px;max-width:560px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.tag{display:inline-block;font-size:13px;font-weight:700;color:var(--accent);background:var(--soft);padding:5px 12px;border-radius:999px;margin-bottom:18px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card .ic{font-size:22px;margin-bottom:8px;display:block}
+.card p{margin:0;font-size:15px;color:var(--muted)}
+.plan .price{font-weight:800;color:var(--accent);margin:.2em 0 .6em}
+.plan ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+.plan.hot{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+summary{font-weight:700;cursor:pointer}
+details p{margin:10px 0 0;color:var(--muted)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+.about{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.about img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);flex:none}
+/* demo */
+.demo{--a:#6d28d9;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;max-width:560px}
+.demo .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.demo .badge{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.06em}
+.sw{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.sw button{width:24px;height:24px;border-radius:50%;border:2px solid var(--surface);outline:1px solid var(--line);cursor:pointer;transition:transform .15s}
+.sw button:active{transform:scale(.8)}
+.item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid var(--line);flex-wrap:wrap}
+.item .ph{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--a),color-mix(in srgb,var(--a) 40%,#fff));flex:none}
+.item .nm{flex:1;min-width:130px}
+.item .nm b{display:block}
+.demo select,.demo input{font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);max-width:100%;width:auto}
+.add{background:var(--a);color:#fff;border:0;border-radius:10px;padding:9px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:transform .12s}
+.add:active{transform:scale(.88)}
+.cart{border-top:2px solid var(--a);margin-top:6px;padding-top:10px;font-size:15px}
+.row{display:flex;justify-content:space-between;gap:8px;padding:3px 0}
+.rm{background:none;border:0;color:var(--muted);cursor:pointer;font-size:18px;padding:0 4px}
+.total{font-weight:800;font-size:18px}
+.bump{animation:bump .3s ease}
+@keyframes bump{50%{transform:scale(1.06)}}
+.fields{display:grid;gap:8px;margin-top:12px}
+.fields input,.fields select{width:100%}
+.go{width:100%;margin-top:12px;background:var(--a);color:#fff;border:0;border-radius:12px;padding:14px;font:inherit;font-weight:800;cursor:pointer}
+.go:disabled{opacity:.4;cursor:default}
+.small{font-size:12px;color:var(--muted);margin:10px 0 0}
+footer{padding:36px 0 90px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .hero::before{animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+  .btn,.card,.add,.sw button,.bump{transition:none;animation:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="w">
+    <span class="logo">sites<i>.</i>pra loja</span>
+    <a class="btn sm wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="w">
+    <span class="tag">Feito em Lavras, MG · atendo lojas de todo o Brasil pelo WhatsApp</span>
+    <h1>Seu site de loja, pronto pra <span class="hl">vender pelo WhatsApp.</span></h1>
+    <p class="lead muted">Vitrine, carrinho que soma sozinho, frete e o pedido chegando organizado no seu zap. Sem linguagem de computador e sem promessa maluca.</p>
+    <div class="cta-row">
+      <a class="btn" href="#demo">Testar a loja de exemplo</a>
+      <a class="btn ghost wa" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="w rv">
+    <h2>O problema que eu resolvo</h2>
+    <p class="muted" style="max-width:620px">Muita loja vende bem pelo Instagram e se perde no WhatsApp: pedido sem tamanho, preço que ninguém lembra, “quanto fica o frete?” às onze da noite. E quem procura a sua loja no Google acaba achando o concorrente. Um site simples resolve as duas coisas.</p>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <h2 class="rv">O que vem no site</h2>
+    <div class="grid">
+      <div class="card rv"><span class="ic">🛍️</span><h3>Vitrine com variações</h3><p>Foto grande, tamanho e cor de cada peça, e “esgotado” quando acabar.</p></div>
+      <div class="card rv"><span class="ic">🧮</span><h3>Carrinho que soma</h3><p>O cliente escolhe, o site faz a conta. Promoção e cupom fixo incluídos.</p></div>
+      <div class="card rv"><span class="ic">📦</span><h3>Frete do jeito da loja</h3><p>Retirada, entrega local, Correios ou frete grátis acima de um valor.</p></div>
+      <div class="card rv"><span class="ic">💬</span><h3>Pedido pronto no WhatsApp</h3><p>Itens, tamanhos, total, nome e CEP numa mensagem organizada.</p></div>
+      <div class="card rv"><span class="ic">📝</span><h3>Preço fácil de mudar</h3><p>Planilha simples, editável pelo celular. Ou eu atualizo pra você.</p></div>
+      <div class="card rv"><span class="ic">🛡️</span><h3>Trava contra erro de preço</h3><p>Se alguém trocar R$ 99 por R$ 9, o site pergunta antes de publicar.</p></div>
+      <div class="card rv"><span class="ic">📱</span><h3>Celular em primeiro lugar</h3><p>Rápido e leve, pensado pro dedão e pra internet do interior.</p></div>
+      <div class="card rv"><span class="ic">🔒</span><h3>Domínio próprio e HTTPS</h3><p>Com cadeado, pra ninguém achar que o seu site é golpe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="demo" style="background:var(--soft)">
+  <div class="w">
+    <h2 class="rv">Experimente. A loja é de mentira, o carrinho é de verdade.</h2>
+    <p class="muted rv">Escolha tamanho, adicione peças e feche no WhatsApp. Troque a cor pra ver como a loja ganha a identidade de quem for o dono.</p>
+    <div class="demo rv" id="dm">
+      <div class="top">
+        <span class="badge">LOJA DE EXEMPLO · NADA É VENDIDO DE VERDADE</span>
+        <div class="sw" id="sw">cor:</div>
+      </div>
+      <div id="prods"></div>
+      <div class="cart" id="cart"></div>
+      <div class="fields">
+        <input id="nome" type="text" placeholder="Seu nome" autocomplete="off">
+        <input id="cep" type="text" inputmode="numeric" placeholder="CEP" autocomplete="off">
+        <select id="ship">
+          <option value="0">Retirada na loja (grátis)</option>
+          <option value="8">Entrega local (R$ 8,00)</option>
+          <option value="c">Correios (calculado no WhatsApp)</option>
+        </select>
+      </div>
+      <button class="go" id="go" disabled>Fechar no WhatsApp</button>
+      <p class="small">Pedido sujeito a confirmação de preço e estoque.<br>O WhatsApp aqui é meramente ilustrativo: o número é fictício e serve só pra mostrar como o pedido chegaria na sua loja.</p>
+    </div>
+  </div>
+</section>
+
+<section id="planos">
+  <div class="w">
+    <h2 class="rv">Três formatos, sem pegadinha</h2>
+    <p class="muted rv">O valor eu passo conversando, de acordo com o que a sua loja precisa.</p>
+    <div class="grid">
+      <div class="card plan rv"><h3>Site simples</h3><p class="price">sob consulta</p><ul><li>Apresentação do negócio</li><li>Serviços, fotos e preços</li><li>Botão de WhatsApp em destaque</li></ul></div>
+      <div class="card plan hot rv"><h3>Loja com carrinho</h3><p class="price">sob consulta</p><ul><li>Vitrine com tamanho e cor</li><li>Carrinho que soma sozinho</li><li>Pedido pronto no WhatsApp</li></ul></div>
+      <div class="card plan rv"><h3>Loja completa</h3><p class="price">sob consulta</p><ul><li>Tudo da loja com carrinho</li><li>Frete pelos Correios</li><li>Promoções e cupom</li></ul></div>
+    </div>
+    <p class="muted rv" style="margin-top:18px">Opcional: <b>manutenção mensal</b>. Você manda a mudança de preço ou produto e eu atualizo. Ou aprende a mexer na planilha e não paga nada. Escolha livre. 😄</p>
+  </div>
+</section>
+
+<section style="background:var(--soft)">
+  <div class="w rv about">
+    <img src="foto.jpg" alt="Foto de quem faz os sites" onerror="this.style.display='none'">
+    <div style="flex:1;min-width:240px">
+    <h2>Quem faz</h2>
+    <p class="muted" style="max-width:620px">Sou de Lavras, Minas Gerais, e faço sites pra comércios e lojas: roupa, salão, comida e tudo que o Brasil faz tão bem. Atendo pelo WhatsApp, falo português normal e explico tudo sem “API REST”.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="w">
+    <h2 class="rv">Perguntas rápidas</h2>
+    <details class="rv"><summary>Quanto tempo leva?</summary><p>Depende do formato. Um site simples sai bem rápido; uma loja com carrinho e frete leva mais. Eu combino o prazo antes de começar.</p></details>
+    <details class="rv"><summary>Preciso pagar hospedagem?</summary><p>Sim, todo site precisa ficar hospedado e ter um endereço. Eu explico as opções e os custos antes, pra não ter surpresa.</p></details>
+    <details class="rv"><summary>Quem atualiza os preços?</summary><p>Você, numa planilha simples, ou eu, na manutenção mensal. E o site avisa quando um preço parece errado.</p></details>
+    <details class="rv"><summary>O pagamento é pelo site?</summary><p>Não por enquanto. O pedido fecha no WhatsApp e você combina o pagamento do jeito que já faz. Pagamento automático pode entrar depois.</p></details>
+    <details class="rv"><summary>Funciona pra loja de outra cidade?</summary><p>Funciona. Eu atendo lojas de todo o Brasil, tudo online pelo WhatsApp: conversa, combinado por escrito e entrega do site por link.</p></details>
+    <details class="rv"><summary>Como é o pagamento do seu trabalho?</summary><p>Primeiro eu faço um esboço da sua loja, sem custo. Se você gostar, paga uma entrada por Pix e eu monto o site. O restante é pago antes de ele ir pro ar. Tudo combinado por escrito no WhatsApp, pra ninguém ter surpresa.</p></details>
+    <details class="rv"><summary>E se eu não gostar, ou o dinheiro apertar no meio do caminho?</summary><p>Sem drama: se você desistir antes de o site ir pro ar, devolvo tudo que você pagou. É só me avisar pelo WhatsApp. Mesmo depois de o site ir pro ar, você ainda tem 7 dias, contados do dia da publicação, pra pedir a devolução (nesse caso o site sai do ar). Passou disso, o trabalho está entregue e o valor não volta. Tudo isso fica combinado por escrito antes de começar, pra ninguém ter surpresa.</p></details>
+    <details class="rv"><summary>E se eu não tiver fotos boas?</summary><p>Eu oriento como fotografar as peças com o celular. Foto boa vende mais que site bonito.</p></details>
+  </div>
+</section>
+
+<section>
+  <div class="w rv" style="text-align:center">
+    <h2>Quer ver como ficaria a sua loja?</h2>
+    <p class="muted">Manda o nome dela no WhatsApp. A conversa é de graça e sem compromisso.</p>
+    <a class="btn wa" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="w">Feito em Lavras, MG. A loja de exemplo é fictícia e o número de WhatsApp do site é meramente ilustrativo.</div></footer>
+<a class="btn fab wa" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">💬 WhatsApp</a>
+
+<script>
+const NUMERO="5535900000000"; // troque pelo seu número: 55 + DDD + número
+const wa="https://wa.me/"+NUMERO+"?text="+encodeURIComponent("Oi! Vi o seu site e quero saber mais.");
+document.querySelectorAll("a.wa").forEach(a=>a.href=wa);
+
+try{
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+}catch(e){document.querySelectorAll(".rv").forEach(el=>el.classList.add("in"))}
+
+const P=[
+  {n:"Camiseta básica",t:{P:49.9,M:59.9,G:79.9}},
+  {n:"Calça jeans reta",t:{P:109.9,M:129.9,G:139.9}},
+  {n:"Vestido midi",t:{P:89.9,M:99.9,G:119.9}}
+];
+const fmt=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+let cart=[];
+const prods=document.getElementById("prods"),cartEl=document.getElementById("cart"),ship=document.getElementById("ship"),goBtn=document.getElementById("go");
+P.forEach((x,i)=>{
+  const d=document.createElement("div");d.className="item";
+  d.innerHTML='<div class="ph"></div><div class="nm"><b>'+x.n+'</b><span id="pr'+i+'">'+fmt(x.t.M)+'</span></div><div><select id="t'+i+'"><option>P</option><option selected>M</option><option>G</option></select> <button class="add" data-i="'+i+'">Adicionar</button></div>';
+  prods.appendChild(d);
+});
+prods.addEventListener("change",e=>{
+  const sl=e.target.closest("select");if(!sl)return;
+  const i=+sl.id.slice(1);
+  document.getElementById("pr"+i).textContent=fmt(P[i].t[sl.value]);
+});
+prods.addEventListener("click",e=>{
+  const b=e.target.closest(".add");if(!b)return;
+  const i=+b.dataset.i,t=document.getElementById("t"+i).value,x=P[i];
+  const f=cart.find(c=>c.i===i&&c.t===t);
+  if(f)f.q++;else cart.push({i,t,n:x.n,p:x.t[t],q:1});
+  draw(true);
+});
+cartEl.addEventListener("click",e=>{const b=e.target.closest(".rm");if(!b)return;cart.splice(+b.dataset.k,1);draw(false)});
+ship.onchange=()=>draw(false);
+function calc(){
+  const sub=cart.reduce((s,c)=>s+c.p*c.q,0);
+  const sv=ship.value,fr=sv==="c"?null:+sv;
+  return {sub,fr,tot:sub+(fr||0)};
+}
+function draw(bump){
+  if(!cart.length){cartEl.innerHTML='<span class="muted">Carrinho vazio. Que tal um vestido?</span>';goBtn.disabled=true;return}
+  const {sub,fr,tot}=calc();
+  cartEl.innerHTML=cart.map((c,k)=>'<div class="row"><span>'+c.q+'x '+c.n+' ('+c.t+')</span><span>'+fmt(c.p*c.q)+' <button class="rm" data-k="'+k+'" aria-label="Remover">×</button></span></div>').join("")+
+  '<div class="row"><span>Subtotal</span><span>'+fmt(sub)+'</span></div>'+
+  '<div class="row"><span>Entrega</span><span>'+(fr===null?"a combinar":fmt(fr))+'</span></div>'+
+  '<div class="row total'+(bump?" bump":"")+'"><span>Total</span><span>'+fmt(tot)+(fr===null?" + frete":"")+'</span></div>';
+  goBtn.disabled=false;
+}
+const sw=document.getElementById("sw");
+sw.insertAdjacentHTML("beforeend",["#6d28d9","#15803d","#be123c","#1d4ed8"].map(c=>'<button style="background:'+c+'" data-c="'+c+'" aria-label="Trocar cor da loja"></button>').join(""));
+sw.addEventListener("click",e=>{const b=e.target.closest("button");if(b)document.getElementById("dm").style.setProperty("--a",b.dataset.c)});
+goBtn.onclick=()=>{
+  if(!cart.length)return;
+  const {sub,fr,tot}=calc();
+  const nome=document.getElementById("nome").value.trim()||"(não informado)";
+  const cep=document.getElementById("cep").value.trim()||"(não informado)";
+  const sv=ship.options[ship.selectedIndex].text;
+  const msg="[DEMO] Oi! Quero fazer um pedido:\n"+cart.map(c=>"• "+c.q+"x "+c.n+" ("+c.t+") – "+fmt(c.p*c.q)).join("\n")+
+    "\nSubtotal: "+fmt(sub)+"\nEntrega: "+sv+"\nTotal: "+fmt(tot)+(fr===null?" + frete":"")+
+    "\nNome: "+nome+"\nCEP: "+cep+"\n\nPedido sujeito a confirmação de preço e estoque.";
+  window.open("https://wa.me/"+NUMERO+"?text="+encodeURIComponent(msg),"_blank");
+};
+draw(false);
+</script>
+</body>
+</html>
